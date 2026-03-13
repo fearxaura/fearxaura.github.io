@@ -1,0 +1,42 @@
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: 'Alex K.',
+    role: 'Startup Founder',
+    avatar: 'A',
+    text: 'Delivered our MVP in record time. The code quality was exceptional and the attention to detail was impressive.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'Sarah M.',
+    role: 'Product Manager',
+    avatar: 'S',
+    text: 'Our Telegram bot grew to 50k users within a month. The bot is rock solid and handles massive traffic perfectly.',
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: 'Raj P.',
+    role: 'CTO, TechCorp',
+    avatar: 'R',
+    text: 'Migrated our entire infrastructure to Docker. Zero downtime, 40% cost reduction. Outstanding work!',
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Emma L.',
+    role: 'E-commerce Owner',
+    avatar: 'E',
+    text: 'The website redesign increased our conversion rate by 35%. Modern, fast, and perfectly optimized.',
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: 'David W.',
+    role: 'Crypto Trader',
+    avatar: 'D',
+    text: 'The trading bot has been running for 6 months without a single issue. Pays for itself every week.',
+    rating: 5,
+  },
+]
