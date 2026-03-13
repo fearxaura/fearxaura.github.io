@@ -1,10 +1,10 @@
 # FEARLESS | Professional Developer Portfolio
 
-A modern, black & white developer portfolio built with Vite 5, React 18, and TailwindCSS v3.
+A modern, black & white developer portfolio built with Vite 5, React 19, and TailwindCSS v3.
 
 ## Tech Stack
 
-- **Framework**: Vite 5 + React 18
+- **Framework**: Vite 5 + React 19
 - **Styling**: TailwindCSS v3.4
 - **Animations**: Framer Motion v11
 - **Forms**: React Hook Form

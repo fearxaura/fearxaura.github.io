@@ -47,7 +47,7 @@ export default function Testimonials() {
     animId = requestAnimationFrame(animate)
 
     const pause = () => cancelAnimationFrame(animId)
-    const resume = () => { animate() }
+    const resume = () => { animId = requestAnimationFrame(animate) }
     track.addEventListener('mouseenter', pause)
     track.addEventListener('mouseleave', resume)
 

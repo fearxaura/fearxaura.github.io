@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export function useTypewriter(words = [], speed = 80, deleteSpeed = 50, pause = 2000) {
   const [text, setText] = useState('')
   const [wordIndex, setWordIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+  const pauseTimeoutRef = useRef(null)
 
   useEffect(() => {
     if (!words.length) return
@@ -13,7 +14,7 @@ export function useTypewriter(words = [], speed = 80, deleteSpeed = 50, pause = 
       if (!isDeleting) {
         setText(currentWord.slice(0, text.length + 1))
         if (text.length + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), pause)
+          pauseTimeoutRef.current = setTimeout(() => setIsDeleting(true), pause)
         }
       } else {
         setText(currentWord.slice(0, text.length - 1))
@@ -24,7 +25,10 @@ export function useTypewriter(words = [], speed = 80, deleteSpeed = 50, pause = 
       }
     }, isDeleting ? deleteSpeed : speed)
 
-    return () => clearTimeout(timeout)
+    return () => {
+      clearTimeout(timeout)
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
+    }
   }, [text, isDeleting, wordIndex, words, speed, deleteSpeed, pause])
 
   return text
